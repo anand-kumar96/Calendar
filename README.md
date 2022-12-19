@@ -10,7 +10,7 @@ This is a webpage based app of live Calendar.
   - [Tech-Stacks-Used](#Tech-Stacks-Used)
   - [What I learned](#what-i-learned)
   - [Links](#links) 
-  - [Setup/Installation Requirements](#Setup/Installation Requirements)
+  - [Setup-Installation Requirements](#Setup-Installation Requirements)
   - [Useful resources](#useful-resources)
   - [Author](#author)
 
