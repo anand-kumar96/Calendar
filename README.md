@@ -10,7 +10,7 @@ This is a webpage based app of live Calendar.
   - [Tech-Stacks-Used](#Tech-Stacks-Used)
   - [What I learned](#what-i-learned)
   - [Links](#links) 
-  - [Setup-Installation Requirements](#Setup-Installation Requirements)
+  - [Setup-Installation-Requirements](#Setup-Installation-Requirements)
   - [Useful resources](#useful-resources)
   - [Author](#author)
 
@@ -45,7 +45,7 @@ While doing this project I have implemented the Javascript functionality of drop
 - Code URL     : [https://github.com/Anand-kumar96/Calendar](https://github.com/Anand-kumar96/Calendar)
 - Live Site URL: [https://html-css-javascript-calendar.netlify.app](https://html-css-javascript-calendar.netlify.app)
 
-### Setup/Installation Requirements
+### Setup-Installation-Requirements
 -  Clone this repo to your desktop
 -  Naviagte to the top level of directory
 -  Open index.html in your browser
