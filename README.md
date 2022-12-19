@@ -10,8 +10,9 @@ This is a webpage based app of live Calendar.
   - [Tech-Stacks-Used](#Tech-Stacks-Used)
   - [What I learned](#what-i-learned)
   - [Links](#links) 
+  - [Setup/Installation Requirements](#Setup/Installation Requirements)
   - [Useful resources](#useful-resources)
-- [Author](#author)
+  - [Author](#author)
 
 ## Overview
 
@@ -44,9 +45,14 @@ While doing this project I have implemented the Javascript functionality of drop
 - Code URL     : [https://github.com/Anand-kumar96/Calendar](https://github.com/Anand-kumar96/Calendar)
 - Live Site URL: [https://html-css-javascript-calendar.netlify.app](https://html-css-javascript-calendar.netlify.app)
 
+### Setup/Installation Requirements
+-  Clone this repo to your desktop
+-  Naviagte to the top level of directory
+-  Open index.html in your browser
+
 ### Useful resources
 
-- [https://www.w3schools.com/](https://www.w3schools.com/) - This helped me for strengthening the fundamentals of HTML and CSS. it provides all the concept from scratch level.
+- [https://www.w3schools.com/](https://www.w3schools.com/) - This helped me for strengthening the fundamentals of HTML and CSS. it provides all the concept from scratch      level.
 - [https://stackoverflow.com/](https://stackoverflow.com/) - This is an amazing website for solving your doubts and finding any different approaches. I always refer to it to learn different properties of css and javascript.
 
 ## Author
