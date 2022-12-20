@@ -12,52 +12,50 @@ var month_names = ['January',
     'October',
     'November',
     'December']
-var year_names = ['2015',
-    '2016',
-    '2017',
-    '2018',
-    '2019',
-    '2020',
-    '2021',
-    '2022',
-    '2023',
-    '2024',
-    '2025',
-    '2026']
+    
+    var year_names = [];
+    for (var i = 1950; i <= 2072; i++) {
+        year_names.push(i);
+    }
 
-function renderDate() {  // when body load
-    //current month & year->day sun-->0 to sat->1,similrly  month-->0 to 11
+function renderDate() {  // when body load  //current month & year->day sun-->0 to sat->1,similrly  month-->0 to 11
 
     document.querySelector('#month-picker').innerHTML = month_names[dt.getMonth()];
     document.querySelector('.year').innerHTML = dt.getFullYear();
 
     // to print whole calendar 
-    var endDate = new Date(dt.getFullYear(), dt.getMonth() + 1, 0).getDate();   // to get current month we add 1
+    var endDateOfMonth = new Date(dt.getFullYear(), dt.getMonth() + 1, 0).getDate();   // end Date of current month
 
-    var preDate = new Date(dt.getFullYear(), dt.getMonth(), 0).getDate();     // prevMonthDay  
+    var endDatePrevMonth = new Date(dt.getFullYear(), dt.getMonth(), 0).getDate();     // end date of previous month
+    var endDaysOfMonth = new Date(dt.getFullYear(), dt.getMonth(), endDateOfMonth).getDay(); //end days of current month
 
 
     var today = new Date();
 
     dt.setDate(1);
-    var day = dt.getDay();
+    var day = dt.getDay(); // first day of month
 
+// generating days
 
     var cells = "";
     for (var x = day; x > 0; x--) {
-        cells += "<div class='prev-day'>" + (preDate - x + 1) + "</div>";
+        cells += "<div class='prev-day'>" + (endDatePrevMonth - x + 1) + "</div>";
     }
-    for (var i = 1; i <= endDate; i++) {
+    for (var i = 1; i <= endDateOfMonth; i++) {
         if (i == today.getDate() && dt.getMonth() == today.getMonth() && dt.getFullYear() == today.getFullYear()) {
             cells += "<div class='today'>" + i + "</div>";
         } else {
             cells += "<div>" + i + "</div>";
         }
     }
+    for (var y = endDaysOfMonth; y < 6; y++) {
+        cells += "<div class='prev-day'>" + (y - endDaysOfMonth + 1) + "</div>";
+    }
     document.getElementsByClassName("calendar-days")[0].innerHTML = cells;
 
 }
 
+// next and prev month code
 function moveMonth(para) {
     if (para == 'prev') {
         dt.setMonth(dt.getMonth() - 1);
@@ -67,7 +65,7 @@ function moveMonth(para) {
     renderDate();
 }
 
-
+// dropdown list of month
 let month_list = document.querySelector('.month-list')
 
 month_names.forEach((e, index) => {
@@ -88,7 +86,7 @@ month_picker.onclick = () => {
 }
 
 
-
+// dropdown list of year
 
 let year_list = document.querySelector('.year-list')
 
@@ -102,6 +100,17 @@ year_names.forEach((e, index) => {
     }
     year_list.appendChild(years)
 })
+// var p=0;
+// for(var z=1950;z<=2051;z++){
+//     let years = document.createElement('div')
+//     years.innerHTML = `<div data-year="${p++}">${z}</div>`
+//     years.querySelector('div').onclick = () => {
+//         year_list.classList.remove('show')
+//         dt.setFullYear(z);
+//         renderDate();
+//     }
+//     year_list.appendChild(years)
+// }
 
 let year_picker = document.querySelector('#year')
 
@@ -116,3 +125,6 @@ dark_mode_toggle.onclick = () => {
     document.querySelector('body').classList.toggle('light')
     document.querySelector('body').classList.toggle('dark')
 }
+
+
+

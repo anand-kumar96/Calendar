@@ -58,7 +58,6 @@ body {
 .lights .calendar {
     box-shadow: var(--shadow);
 }
-
 .lights {
     width: 100vw;
     height: 100vh;
@@ -114,22 +113,19 @@ body {
 
 .year,
 .month-picker {
-    border-radius: 10px;
     cursor: pointer;
 }
 
 .month-picker {
-    padding: 5px 10px 5px 10px;
+    padding: 5px 0px 5px 0px;
 }
 
 .year {
-    padding: 5px 10px 5px 10px;
+    padding: 5px 0px 5px 0px;
 }
 
 .next:hover,
-.prev:hover,
-.month-picker:hover,
-.year:hover {
+.prev:hover {
     background-color: var(--color-hover);
 }
 
@@ -227,8 +223,30 @@ body {
     left: calc(2px + 50%);
 }
 
-
-.year-list,
+.year-list {
+    overflow-x: auto;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: var(--bg-main);
+    padding: 20px;
+    grid-template-columns: repeat(3, auto);
+    grid-auto-rows: 100px ;
+    gap: 5px;
+    display: grid;
+    transform: scale(1.5);
+    visibility: hidden;
+    pointer-events: none;
+}
+ .year-list::-webkit-scrollbar {  /*for chrome hide sidebar */
+    display: none;
+}
+.year-list {
+    -ms-overflow-style: none;  /* Internet Explorer 10+ hide sidebar */
+    scrollbar-width: none;  /* Firefox hide sidebar*/
+}
 .month-list {
     position: absolute;
     width: 100%;
