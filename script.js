@@ -36,19 +36,21 @@ function renderDate() {  // when body load  //current month & year->day sun-->0 
     var day = dt.getDay(); // first day of month
 
 // generating days
-
+    var count=42;
     var cells = "";
     for (var x = day; x > 0; x--) {
+        count--;
         cells += "<div class='prev-day'>" + (endDatePrevMonth - x + 1) + "</div>";
     }
     for (var i = 1; i <= endDateOfMonth; i++) {
+        count--;
         if (i == today.getDate() && dt.getMonth() == today.getMonth() && dt.getFullYear() == today.getFullYear()) {
             cells += "<div class='today'>" + i + "</div>";
         } else {
             cells += "<div>" + i + "</div>";
         }
     }
-    for (var y = endDaysOfMonth; y < 6; y++) {
+    for (var y = endDaysOfMonth; y < count+endDaysOfMonth; y++) {
         cells += "<div class='prev-day'>" + (y - endDaysOfMonth + 1) + "</div>";
     }
     document.getElementsByClassName("calendar-days")[0].innerHTML = cells;
