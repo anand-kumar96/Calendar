@@ -58,6 +58,7 @@ body {
 .lights .calendar {
     box-shadow: var(--shadow);
 }
+
 .lights {
     width: 100vw;
     height: 100vh;
@@ -231,22 +232,28 @@ body {
     top: 0;
     left: 0;
     background-color: var(--bg-main);
-    padding: 20px;
+    padding: 10px;
     grid-template-columns: repeat(3, auto);
-    grid-auto-rows: 100px ;
-    gap: 5px;
+    grid-auto-rows: 100px;
+    gap: 0px;
     display: grid;
     transform: scale(1.5);
     visibility: hidden;
     pointer-events: none;
 }
- .year-list::-webkit-scrollbar {  /*for chrome hide sidebar */
+
+.year-list::-webkit-scrollbar {
+    /*for chrome hide sidebar */
     display: none;
 }
+
 .year-list {
-    -ms-overflow-style: none;  /* Internet Explorer 10+ hide sidebar */
-    scrollbar-width: none;  /* Firefox hide sidebar*/
+    -ms-overflow-style: none;
+    /* Internet Explorer 10+ hide sidebar */
+    scrollbar-width: none;
+    /* Firefox hide sidebar*/
 }
+
 .month-list {
     position: absolute;
     width: 100%;
@@ -271,13 +278,25 @@ body {
     transition: all 0.2s ease-in-out;
 }
 
+/* .year-list>div {
+    padding-top:5px;
+    padding-bottom: 5px;
+} */
 .year-list>div,
 .month-list>div {
     display: grid;
     place-items: center;
 }
 
-.year-list>div>div,
+.year-list>div>div {
+    width: 50%;
+    padding: 5px 10px;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+    color: var(--color-txt);
+}
+
 .month-list>div>div {
     width: 100%;
     padding: 5px 20px;
