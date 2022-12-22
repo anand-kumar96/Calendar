@@ -20,7 +20,6 @@
     --white: #fff;
     --shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
-
 .dark {
     --bg-body: var(--dark-body);
     --bg-main: var(--dark-main);
@@ -31,7 +30,6 @@
     --color-prev: var(--dark-prev);
     --color-week: var(--dark-week);
 }
-
 .light {
     --bg-body: var(--light-body);
     --bg-main: var(--light-main);
@@ -42,23 +40,19 @@
     --color-prev: var(--light-prev);
     --color-week: var(--light-week);
 }
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
 html,
 body {
     font-family: "Lato", sans-serif;
     background-color: var(--bg-body);
 }
-
 .lights .calendar {
     box-shadow: var(--shadow);
 }
-
 .lights {
     width: 100vw;
     height: 100vh;
@@ -66,7 +60,6 @@ body {
     justify-content: center;
     align-items: center;
 }
-
 .calendar {
     width: 460px;
     height: auto;
@@ -75,7 +68,6 @@ body {
     position: relative;
     overflow: hidden;
 }
-
 .calendar-header {
     display: flex;
     justify-content: space-between;
@@ -86,22 +78,18 @@ body {
     padding: 10px;
     padding-top: 30px;
 }
-
 .year-picker {
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
 }
-
 .next {
     margin: 0 32px 0 0;
 }
-
 .prev {
     margin: 0 0 0 32px;
 }
-
 .next,
 .prev {
     height: 40px;
@@ -111,12 +99,10 @@ body {
     place-items: center;
     cursor: pointer;
 }
-
 .year,
 .month-picker {
     cursor: pointer;
 }
-
 .month-picker {
     padding: 5px 0px 5px 0px;
 }
@@ -124,12 +110,10 @@ body {
 .year {
     padding: 5px 0px 5px 0px;
 }
-
 .next:hover,
 .prev:hover {
     background-color: var(--color-hover);
 }
-
 .calendar-week-day {
     background-color: var(--bg-second);
     height: 50px;
@@ -138,13 +122,11 @@ body {
     font-weight: 600;
     padding: 0 20px;
 }
-
 .calendar-week-day div {
     display: grid;
     place-items: center;
     color: var(--color-week);
 }
-
 .calendar-days {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
@@ -153,7 +135,6 @@ body {
     padding: 0 20px;
     padding-top: 10px;
 }
-
 .calendar-days div {
     width: 50px;
     height: 50px;
@@ -165,39 +146,32 @@ body {
     cursor: pointer;
     animation: to-top 1s forwards;
 }
-
 .calendar-days div:hover {
     background-color: var(--color-hover);
     border-radius: 50%;
     transition: all 0.3s;
 }
-
 .today {
     background-color: var(--color-curr);
     color: var(--white);
     border-radius: 50%;
 }
-
 .prev-day {
     color: var(--color-prev);
 }
-
 .calendar-footer {
     padding: 10px 20px 20px 20px;
     display: flex;
     justify-content: flex-end;
     align-items: center;
 }
-
 .toggle {
     display: flex;
 }
-
 .toggle span {
     margin-right: 7px;
     color: var(--color-txt);
 }
-
 .dark-mode-switch {
     position: relative;
     bottom: 3px;
@@ -207,7 +181,6 @@ body {
     background-color: var(--bg-second);
     cursor: pointer;
 }
-
 .dark-mode-switch-ident {
     width: 18px;
     height: 18px;
@@ -218,12 +191,10 @@ body {
     left: 2px;
     transition: left 0.2s ease-in-out;
 }
-
 .dark .dark-mode-switch .dark-mode-switch-ident {
     top: 2px;
     left: calc(2px + 50%);
 }
-
 .year-list {
     overflow-x: auto;
     position: absolute;
@@ -241,19 +212,16 @@ body {
     visibility: hidden;
     pointer-events: none;
 }
-
 .year-list::-webkit-scrollbar {
     /*for chrome hide sidebar */
     display: none;
 }
-
 .year-list {
     -ms-overflow-style: none;
     /* Internet Explorer 10+ hide sidebar */
     scrollbar-width: none;
     /* Firefox hide sidebar*/
 }
-
 .month-list {
     position: absolute;
     width: 100%;
@@ -269,7 +237,6 @@ body {
     visibility: hidden;
     pointer-events: none;
 }
-
 .year-list.show,
 .month-list.show {
     transform: scale(1);
@@ -277,7 +244,6 @@ body {
     pointer-events: visible;
     transition: all 0.2s ease-in-out;
 }
-
 /* .year-list>div {
     padding-top:5px;
     padding-bottom: 5px;
@@ -287,7 +253,6 @@ body {
     display: grid;
     place-items: center;
 }
-
 .year-list>div>div {
     width: 50%;
     padding: 5px 10px;
@@ -296,7 +261,6 @@ body {
     cursor: pointer;
     color: var(--color-txt);
 }
-
 .month-list>div>div {
     width: 100%;
     padding: 5px 20px;
@@ -305,18 +269,13 @@ body {
     cursor: pointer;
     color: var(--color-txt);
 }
-
 .year-list>div>div:hover,
 .month-list>div>div:hover {
     background-color: var(--color-hover);
 }
-
-
 .calendar-days div span {
     position: absolute;
 }
-
-
 @keyframes to-top {
     0% {
         transform: translateY(100%);
