@@ -110,10 +110,10 @@ body {
 .year {
     padding: 5px 0px 5px 0px;
 }
-.next:hover,
+/* .next:hover,
 .prev:hover {
     background-color: var(--color-hover);
-}
+} */
 .calendar-week-day {
     background-color: var(--bg-second);
     height: 50px;

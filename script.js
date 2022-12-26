@@ -1,12 +1,14 @@
 var dt = new Date();
+var d = new Date();
 // month list 
 var month_names = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
-var year_names = []; 
+var year_names = [];
 for (var i = 1950; i <= 2072; i++) {  // range of year
     year_names.push(i);
 }
 
-function renderDate() {  //render function  when body load 
+//render function  when body load 
+function renderDate() {
     document.querySelector('#month-picker').innerHTML = month_names[dt.getMonth()];
     document.querySelector('.year').innerHTML = dt.getFullYear();
     var endDateOfMonth = new Date(dt.getFullYear(), dt.getMonth() + 1, 0).getDate(); //end Date of current month
@@ -15,8 +17,9 @@ function renderDate() {  //render function  when body load
     var today = new Date();
     dt.setDate(1);
     var day = dt.getDay(); //first day of month
+
     // generating days
-    var count = 42;  //to fix 6 row
+    var count = 42;  //total days 
     var cells = "";
     for (var x = day; x > 0; x--) {   //prev month date
         count--;
@@ -38,13 +41,17 @@ function renderDate() {  //render function  when body load
 
 // next and prev month code
 function moveMonth(para) {
-    if (para == 'prev') {
+    if (para == 'prev' && dt.getFullYear() >= 1950) {
+        if (dt.getFullYear() == 1950 && dt.getMonth() == 0) { //to fix the range of prev year
+            dt.setMonth(dt.getMonth() + 1);
+        }
         dt.setMonth(dt.getMonth() - 1);
-    } else {
+
+    } else if (para == "next" && dt.getFullYear() <= 2072) {
+        if (dt.getFullYear() == 2072 && dt.getMonth() == 11) { //to fix the range of next year
+            dt.setMonth(dt.getMonth() - 1);
+        }
         dt.setMonth(dt.getMonth() + 1);
-    }
-    if (dt.getFullYear() > 2072 || dt.getFullYear() < 1950) {
-        return;
     }
     renderDate();
 }
